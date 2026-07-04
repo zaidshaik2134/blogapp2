@@ -3,6 +3,7 @@ import Layout from './components/Layout.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import AdminDashboard from './pages/AdminDashboard.jsx';
 import AdminLogin from './pages/AdminLogin.jsx';
+import AdminRegister from './pages/AdminRegister.jsx';
 import BlogDetails from './pages/BlogDetails.jsx';
 import BlogForm from './pages/BlogForm.jsx';
 import Home from './pages/Home.jsx';
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/blogs/:id" element={<BlogDetails />} />
         <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/register" element={<AdminRegister />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/blogs/new" element={<BlogForm />} />

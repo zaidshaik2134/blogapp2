@@ -2,7 +2,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Lock } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { useAuth } from '../context/useAuth.js';
 import getErrorMessage from '../utils/getErrorMessage.js';
@@ -67,6 +67,12 @@ const AdminLogin = () => {
             Login
           </button>
         </form>
+        <p className="mt-5 text-center text-sm text-ink/65">
+          Don&apos;t have an account?{' '}
+          <Link to="/admin/register" className="font-bold text-ocean hover:underline">
+            Register
+          </Link>
+        </p>
       </div>
     </section>
   );

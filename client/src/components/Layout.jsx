@@ -37,9 +37,14 @@ const Layout = () => {
                 </button>
               </>
             ) : (
-              <NavLink to="/admin/login" className="btn-primary">
-                Admin Login
-              </NavLink>
+              <>
+                <NavLink to="/admin/register" className="btn-secondary">
+                  Register
+                </NavLink>
+                <NavLink to="/admin/login" className="btn-primary">
+                  Admin Login
+                </NavLink>
+              </>
             )}
           </nav>
         </div>

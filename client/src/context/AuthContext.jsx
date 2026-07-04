@@ -17,6 +17,14 @@ export const AuthProvider = ({ children }) => {
     setAdmin(data.admin);
   };
 
+  const register = async (values) => {
+    const { data } = await api.post('/auth/register', values);
+    localStorage.setItem('blog_admin_token', data.token);
+    localStorage.setItem('blog_admin', JSON.stringify(data.admin));
+    setToken(data.token);
+    setAdmin(data.admin);
+  };
+
   const logout = () => {
     localStorage.removeItem('blog_admin_token');
     localStorage.removeItem('blog_admin');
@@ -29,6 +37,7 @@ export const AuthProvider = ({ children }) => {
       admin,
       isAuthenticated: Boolean(token),
       login,
+      register,
       logout,
     }),
     [admin, token],
