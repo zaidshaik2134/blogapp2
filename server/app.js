@@ -45,6 +45,13 @@ app.use(
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Blog API is running 🚀',
+  });
+});
+
 app.get('/api/health', (_req, res) => {
   res.status(200).json({ success: true, message: 'API is healthy' });
 });
